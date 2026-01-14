@@ -92,7 +92,7 @@ def gerar_mapa_master(df_mov, top_laps, win, thresh, dist_min, smoothing, gap):
 class TelemetryApp:
     def __init__(self, root):
         self.root = root
-        self.root.title(f"KARTBOX - TELEMETRY ELITE {VERSION}")
+        self.root.title(f"KARTBOX - TELEMETRY PRO {VERSION}")
         self.root.geometry("750x750")
         self.pasta_selecionada = tk.StringVar(value=os.getcwd())
         
@@ -120,7 +120,7 @@ class TelemetryApp:
         tk.Entry(f_path, textvariable=self.pasta_selecionada, width=75).pack(side="left")
         tk.Button(f_path, text="Pasta", command=self.buscar_pasta).pack(side="right")
         
-        self.btn_run = tk.Button(root, text="GERAR TELEMETRIA ELITE", bg="#27ae60", fg="white", font=("Helvetica", 12, "bold"), height=2, command=self.start_processing)
+        self.btn_run = tk.Button(root, text="GERAR RELATÓRIO DE TELEMETRIA", bg="#27ae60", fg="white", font=("Helvetica", 12, "bold"), height=2, command=self.start_processing)
         self.btn_run.pack(pady=10, padx=20, fill="x")
         
         self.log_area = scrolledtext.ScrolledText(root, height=15, font=("Consolas", 9), bg="#2c3e50", fg="#ecf0f1")
@@ -277,8 +277,8 @@ class TelemetryApp:
 
             except Exception as e: self.log(f"ERRO: {str(e)}"); import traceback; self.log(traceback.format_exc())
         
-        self.root.after(0, lambda: self.btn_run.config(state="normal", text="GERAR TELEMETRIA ELITE"))
-        messagebox.showinfo("Sucesso", "Relatórios Elite gerados!")
+        self.root.after(0, lambda: self.btn_run.config(state="normal", text="GERAR TELEMETRIA PRO"))
+        messagebox.showinfo("Sucesso", "Relatórios gerados!")
         os.startfile(target_dir) # Abre a pasta de resultados automaticamente
 
 if __name__ == "__main__":
