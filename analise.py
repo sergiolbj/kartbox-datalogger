@@ -18,7 +18,7 @@ import threading
 # =================================================================
 # ⚙️ CONFIGURAÇÕES DE VERSÃO E REPOSITÓRIO
 # =================================================================
-VERSION = "6.4" 
+VERSION = "1.0" 
 GITHUB_USER = "sergiolbj"
 GITHUB_REPO = "kartbox-datalogger"
 REPO_URL = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/releases/latest"
